@@ -17,6 +17,8 @@
 // TODO 2:
 // Create variable to store touch state
 int touchState = 0;
+// Count number of touches
+int touchCount = 0;
 
 void setup() {
 
@@ -45,6 +47,15 @@ void loop() {
     // If touch detected (HIGH)
     if (touchState == HIGH) {
         Serial.println("Touch Detected");
+    }
+    else {
+        Serial.println("No Touch");
+    }
+    if (touchState == HIGH) {
+        touchCount++;
+        Serial.println("Touch Detected");
+        Serial.print("Total Touches: ");
+        Serial.println(touchCount);
     }
     else {
         Serial.println("No Touch");
